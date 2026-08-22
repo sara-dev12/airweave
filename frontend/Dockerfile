@@ -1,4 +1,4 @@
-FROM node:20.20.0-slim@sha256:d8a35d586fad3af7abb6fdb9ba972388395405f4d462da9e4a4ddcde67b5e0fb AS builder
+FROM node:26.7.0-slim@sha256:4ebb5ace66f15a24c14c492e01a8beeed4fddf970a856109f5126e703e5fe503 AS builder
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ COPY . .
 RUN NODE_OPTIONS="--max-old-space-size=4096" npx vite build
 
 # Runtime stage
-FROM node:20.20.0-alpine@sha256:09e2b3d9726018aecf269bd35325f46bf75046a643a66d28360ec71132750ec8
+FROM node:26.7.0-alpine@sha256:aadf416b2cdce311a8811ba3f0608a61b77dbf997500e2eafe781b51f6a0b019
 
 WORKDIR /app
 
